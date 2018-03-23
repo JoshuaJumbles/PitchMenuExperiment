@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		674261AC20656F6F00D29DD9 /* ALRadialMenu in Resources */ = {isa = PBXBuildFile; fileRef = 674261AB20656F6F00D29DD9 /* ALRadialMenu */; };
+		674261B12065700C00D29DD9 /* RadialMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674261B02065700C00D29DD9 /* RadialMenuViewController.swift */; };
+		674261B42065705400D29DD9 /* ALRadialMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674261B22065705300D29DD9 /* ALRadialMenu.swift */; };
+		674261B52065705400D29DD9 /* ALRadialMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674261B32065705400D29DD9 /* ALRadialMenuButton.swift */; };
+		674261B7206575AA00D29DD9 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674261B6206575AA00D29DD9 /* MenuData.swift */; };
 		676EDEE1206551AE00A1E7BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676EDEE0206551AE00A1E7BC /* AppDelegate.swift */; };
 		676EDEE3206551AE00A1E7BC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676EDEE2206551AE00A1E7BC /* FirstViewController.swift */; };
 		676EDEE5206551AE00A1E7BC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676EDEE4206551AE00A1E7BC /* SecondViewController.swift */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		674261AB20656F6F00D29DD9 /* ALRadialMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ALRadialMenu; sourceTree = "<group>"; };
+		674261B02065700C00D29DD9 /* RadialMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialMenuViewController.swift; sourceTree = "<group>"; };
+		674261B22065705300D29DD9 /* ALRadialMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALRadialMenu.swift; sourceTree = "<group>"; };
+		674261B32065705400D29DD9 /* ALRadialMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALRadialMenuButton.swift; sourceTree = "<group>"; };
+		674261B6206575AA00D29DD9 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		676EDEDD206551AE00A1E7BC /* PitchMenuExperiments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchMenuExperiments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		676EDEE0206551AE00A1E7BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		676EDEE2206551AE00A1E7BC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +47,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		674261AD20656FA900D29DD9 /* Radial */ = {
+			isa = PBXGroup;
+			children = (
+				674261B22065705300D29DD9 /* ALRadialMenu.swift */,
+				674261B32065705400D29DD9 /* ALRadialMenuButton.swift */,
+				674261B02065700C00D29DD9 /* RadialMenuViewController.swift */,
+			);
+			path = Radial;
+			sourceTree = "<group>";
+		};
+		674261AE20656FAF00D29DD9 /* Mosaic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mosaic;
+			sourceTree = "<group>";
+		};
+		674261AF20656FBF00D29DD9 /* ExpandingTable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ExpandingTable;
+			sourceTree = "<group>";
+		};
 		676EDED4206551AE00A1E7BC = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +90,10 @@
 		676EDEDF206551AE00A1E7BC /* PitchMenuExperiments */ = {
 			isa = PBXGroup;
 			children = (
+				674261AF20656FBF00D29DD9 /* ExpandingTable */,
+				674261AE20656FAF00D29DD9 /* Mosaic */,
+				674261AD20656FA900D29DD9 /* Radial */,
+				674261AB20656F6F00D29DD9 /* ALRadialMenu */,
 				676EDEE0206551AE00A1E7BC /* AppDelegate.swift */,
 				676EDEE2206551AE00A1E7BC /* FirstViewController.swift */,
 				676EDEE4206551AE00A1E7BC /* SecondViewController.swift */,
@@ -63,6 +101,7 @@
 				676EDEE9206551AE00A1E7BC /* Assets.xcassets */,
 				676EDEEB206551AE00A1E7BC /* LaunchScreen.storyboard */,
 				676EDEEE206551AE00A1E7BC /* Info.plist */,
+				674261B6206575AA00D29DD9 /* MenuData.swift */,
 			);
 			path = PitchMenuExperiments;
 			sourceTree = "<group>";
@@ -129,6 +168,7 @@
 				676EDEED206551AE00A1E7BC /* LaunchScreen.storyboard in Resources */,
 				676EDEEA206551AE00A1E7BC /* Assets.xcassets in Resources */,
 				676EDEE8206551AE00A1E7BC /* Main.storyboard in Resources */,
+				674261AC20656F6F00D29DD9 /* ALRadialMenu in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				674261B52065705400D29DD9 /* ALRadialMenuButton.swift in Sources */,
 				676EDEE5206551AE00A1E7BC /* SecondViewController.swift in Sources */,
+				674261B42065705400D29DD9 /* ALRadialMenu.swift in Sources */,
 				676EDEE1206551AE00A1E7BC /* AppDelegate.swift in Sources */,
+				674261B7206575AA00D29DD9 /* MenuData.swift in Sources */,
+				674261B12065700C00D29DD9 /* RadialMenuViewController.swift in Sources */,
 				676EDEE3206551AE00A1E7BC /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Radial-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="PitchMenuExperiments" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="RadialMenuViewController" customModule="PitchMenuExperiments" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,15 +21,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simulator Screen Shot - iPhone X - 2018-03-23 at 10.22.32" translatesAutoresizingMaskIntoConstraints="NO" id="lQv-fd-pLz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQi-PX-sQa">
-                                <rect key="frame" x="161" y="482" width="56" height="69"/>
-                                <state key="normal" title="Pitch"/>
-                            </button>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yuj-P0-kB5" userLabel="DarkOverlay">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="763"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQi-PX-sQa">
+                                <rect key="frame" x="161" y="482" width="56" height="69"/>
+                                <connections>
+                                    <action selector="didTapPitch:" destination="9pv-A4-QxB" eventType="touchUpInside" id="UfT-0T-lGc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -44,7 +46,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Radial" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="darkOverlay" destination="yuj-P0-kB5" id="9kA-yp-AuV"/>
+                        <outlet property="pitchButton" destination="qQi-PX-sQa" id="WNA-tb-gzD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,11 +69,93 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="F9R-XN-mxw" kind="relationship" relationship="viewControllers" id="uMQ-L3-MKJ"/>
+                        <segue destination="VUV-4I-0nw" kind="relationship" relationship="viewControllers" id="rZo-EC-Jch"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Mosaic-->
+        <scene sceneID="a4h-MY-ZUS">
+            <objects>
+                <viewController id="F9R-XN-mxw" customClass="FirstViewController" customModule="PitchMenuExperiments" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QiT-Ro-lfq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simulator Screen Shot - iPhone X - 2018-03-23 at 10.22.32" translatesAutoresizingMaskIntoConstraints="NO" id="UvZ-Mk-rP3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fg8-Ig-qj9">
+                                <rect key="frame" x="161" y="482" width="56" height="69"/>
+                                <state key="normal" title="Pitch"/>
+                            </button>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avq-vg-5vn" userLabel="DarkOverlay">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="763"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fg8-Ig-qj9" secondAttribute="trailing" constant="158" id="1No-qD-1RK"/>
+                            <constraint firstItem="UvZ-Mk-rP3" firstAttribute="leading" secondItem="a7M-QT-vCU" secondAttribute="leading" id="4Hq-CC-Y5g"/>
+                            <constraint firstItem="fg8-Ig-qj9" firstAttribute="top" secondItem="QiT-Ro-lfq" secondAttribute="top" constant="482" id="asM-1o-vGa"/>
+                            <constraint firstItem="a7M-QT-vCU" firstAttribute="trailing" secondItem="UvZ-Mk-rP3" secondAttribute="trailing" id="bLk-4W-XQv"/>
+                            <constraint firstItem="fg8-Ig-qj9" firstAttribute="leading" secondItem="a7M-QT-vCU" secondAttribute="leading" constant="161" id="edh-8A-m1Y"/>
+                            <constraint firstAttribute="bottom" secondItem="fg8-Ig-qj9" secondAttribute="bottom" constant="261" id="nw8-BU-EDj"/>
+                            <constraint firstAttribute="top" secondItem="UvZ-Mk-rP3" secondAttribute="top" id="o9Y-9t-KiW"/>
+                            <constraint firstItem="UvZ-Mk-rP3" firstAttribute="bottom" secondItem="QiT-Ro-lfq" secondAttribute="bottom" id="xlw-x1-ceR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a7M-QT-vCU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mosaic" image="first" id="oAE-aZ-crU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xfn-mM-bbk" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1465" y="0.0"/>
+        </scene>
+        <!--ExpandingTable-->
+        <scene sceneID="huB-Lw-TGA">
+            <objects>
+                <viewController id="VUV-4I-0nw" customClass="FirstViewController" customModule="PitchMenuExperiments" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P52-xu-2Zo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simulator Screen Shot - iPhone X - 2018-03-23 at 10.22.32" translatesAutoresizingMaskIntoConstraints="NO" id="fc4-qC-JBF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giK-l0-DLB">
+                                <rect key="frame" x="161" y="482" width="56" height="69"/>
+                                <state key="normal" title="Pitch"/>
+                            </button>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Md7-bw-nIr" userLabel="DarkOverlay">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="763"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="giK-l0-DLB" secondAttribute="bottom" constant="261" id="34g-FL-cYP"/>
+                            <constraint firstItem="giK-l0-DLB" firstAttribute="leading" secondItem="bSi-Ge-hUE" secondAttribute="leading" constant="161" id="9dc-Ew-06p"/>
+                            <constraint firstItem="fc4-qC-JBF" firstAttribute="leading" secondItem="bSi-Ge-hUE" secondAttribute="leading" id="Uej-br-NbC"/>
+                            <constraint firstItem="bSi-Ge-hUE" firstAttribute="trailing" secondItem="fc4-qC-JBF" secondAttribute="trailing" id="Vu9-Gx-41m"/>
+                            <constraint firstItem="fc4-qC-JBF" firstAttribute="bottom" secondItem="P52-xu-2Zo" secondAttribute="bottom" id="rHL-n6-rXg"/>
+                            <constraint firstAttribute="top" secondItem="fc4-qC-JBF" secondAttribute="top" id="sDW-mn-0fi"/>
+                            <constraint firstAttribute="trailing" secondItem="giK-l0-DLB" secondAttribute="trailing" constant="158" id="sdJ-9U-7XD"/>
+                            <constraint firstItem="giK-l0-DLB" firstAttribute="top" secondItem="P52-xu-2Zo" secondAttribute="top" constant="482" id="wKn-R4-rQd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bSi-Ge-hUE"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ExpandingTable" image="first" id="t7d-sx-jYg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UOd-9e-5za" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2153" y="0.0"/>
         </scene>
     </scenes>
     <resources>
