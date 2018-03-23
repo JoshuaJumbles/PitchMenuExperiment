@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct MenuItem{
     let name:String
@@ -52,4 +52,9 @@ let otherMenu = [
     MenuItem(),
     MenuItem()
 ]
+
+func menuItemColor(index:Int)->UIColor{
+    let hue = (Float(index) * 0.11).truncatingRemainder(dividingBy: 1)
+    return UIColor(hue: CGFloat(hue), saturation: 0.5, brightness: 0.9, alpha: 1)
+}
 

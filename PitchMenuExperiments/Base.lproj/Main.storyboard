@@ -80,7 +80,7 @@
         <!--Mosaic-->
         <scene sceneID="a4h-MY-ZUS">
             <objects>
-                <viewController id="F9R-XN-mxw" customClass="FirstViewController" customModule="PitchMenuExperiments" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="F9R-XN-mxw" customClass="MosaicMenuViewController" customModule="PitchMenuExperiments" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QiT-Ro-lfq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,10 +91,13 @@
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avq-vg-5vn" userLabel="DarkOverlay">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="763"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70373019366197187" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fg8-Ig-qj9">
                                 <rect key="frame" x="161" y="482" width="56" height="69"/>
+                                <connections>
+                                    <action selector="didTapPitch:" destination="F9R-XN-mxw" eventType="touchUpInside" id="DTa-LF-NoG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,6 +114,10 @@
                         <viewLayoutGuide key="safeArea" id="a7M-QT-vCU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mosaic" image="first" id="oAE-aZ-crU"/>
+                    <connections>
+                        <outlet property="darkOverlay" destination="avq-vg-5vn" id="fIe-nf-EbX"/>
+                        <outlet property="pitchButton" destination="fg8-Ig-qj9" id="MPo-6p-S8b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfn-mM-bbk" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,7 +126,7 @@
         <!--ExpandingTable-->
         <scene sceneID="huB-Lw-TGA">
             <objects>
-                <viewController id="VUV-4I-0nw" customClass="FirstViewController" customModule="PitchMenuExperiments" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VUV-4I-0nw" customClass="ExpandingTableViewController" customModule="PitchMenuExperiments" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P52-xu-2Zo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
