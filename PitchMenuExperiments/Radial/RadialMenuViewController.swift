@@ -29,12 +29,13 @@ class RadialMenuViewController: UIViewController {
         else{
             return
         }
+        let angle = (180.0/5.0) * Double(items.count)
         ALRadialMenu()
             .setButtons(buttons: generateButtons(items:items))
             .setDelay(delay: 0.01)
             .setRadius(radius: 120)
-            .setStartAngle(degrees: 180)
-            .setCircumference(degrees: 180.0)
+            .setStartAngle(degrees: 0 - (180.0+angle)/2.0)
+            .setCircumference(degrees: angle)
             .setOverlayBackgroundColor(backgroundColor: UIColor.black.withAlphaComponent(0.7))
             .setAnimationOrigin(animationOrigin: pitchButton.center)
             .presentInView(view: view)
@@ -45,13 +46,14 @@ class RadialMenuViewController: UIViewController {
         var buttons = [ALRadialMenuButton]()
         
         for i in 0..<items.count {
-            let button = ALRadialMenuButton(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
+            let button = ALRadialMenuButton(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
             button.setBackgroundImage(UIImage(named: "icon\(i+1)"), for: UIControlState.normal)
             let label = UILabel()
-            label.font = UIFont.systemFont(ofSize: 14)
+            label.font = UIFont.systemFont(ofSize: 13)
             label.textAlignment = .center
             label.text = items[i].name
-            label.numberOfLines = 3
+            label.adjustsFontSizeToFitWidth = true
+            label.numberOfLines = 2
             label.frame = button.frame
             button.addSubview(label)
             label.center = button.center

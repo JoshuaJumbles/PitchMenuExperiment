@@ -30,6 +30,10 @@ class MosaicMenuViewController:UIViewController{
         presentMenu(items:pitchMenu)
     }
     
+    @IBAction func didTapOverlay(_ sender: Any) {
+        hideMenu()
+    }
+    
     func presentMenu(items:[MenuItem]){
         darkOverlay.isHidden = false
         currentMenuItems = items
@@ -53,7 +57,7 @@ class MosaicMenuViewController:UIViewController{
     func setupMenu(){
         collectionView?.removeFromSuperview()
         
-        let collectionFrame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        let collectionFrame = CGRect(x: 0, y: 0, width: 340, height: 340)
     
         quiltView = QuiltView()
         quiltView?.scrollDirection = UICollectionViewScrollDirection.vertical
@@ -97,7 +101,7 @@ class MosaicMenuViewController:UIViewController{
         self.numberWidths = []
         self.numberHeights = []
         
-        while num < self.initialCells {
+        while num < currentMenuItems?.count ?? 0 {
             self.numbers.append(num)
             self.numberWidths.append(self.randomLength())
             self.numberHeights.append(self.randomLength())
@@ -139,13 +143,14 @@ extension MosaicMenuViewController: UICollectionViewDataSource{
         cell.backgroundColor = menuItemColor(index: indexPath.row)
         
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 15)
         label.textAlignment = .center
         label.text = currentMenuItems?[indexPath.row].name
         label.numberOfLines = 3
         label.frame = cell.frame
         label.center = CGPoint(x:cell.frame.width/2,y:cell.frame.height/2)
         cell.addSubview(label)
+        cell.layer.cornerRadius = 5
         
 //        cell.addGestureRecognizer())
         

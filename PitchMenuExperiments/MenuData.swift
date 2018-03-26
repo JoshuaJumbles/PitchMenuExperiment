@@ -36,21 +36,24 @@ let hitMenu = [
 ]
 
 let hitResultMenu = [
-    MenuItem(),
-    MenuItem(),
-    MenuItem(),
-    MenuItem(),
-    MenuItem(),
-    MenuItem()
+    MenuItem(name: "Out at 1st"),
+    MenuItem(name: "Single"),
+    MenuItem(name: "Double"),
+    MenuItem(name: "Triple"),
+    MenuItem(name: "Home Run"),
+    MenuItem(name: "In-Park Home Run"),
+    MenuItem(name: "Fielders Choice"),
+    
 ]
 
 let otherMenu = [
-    MenuItem(),
-    MenuItem(),
-    MenuItem(),
-    MenuItem(),
-    MenuItem(),
-    MenuItem()
+    MenuItem(name:"Called Strike"),
+    MenuItem(name:"Hit by Pitch"),
+    MenuItem(name:"Intentional Ball"),
+    MenuItem(name:"Intentional Walk"),
+    MenuItem(name:"C. Interference"),
+    MenuItem(name:"Balk"),
+    MenuItem(name:"Batter Out: Other")
 ]
 
 func menuItemColor(index:Int)->UIColor{

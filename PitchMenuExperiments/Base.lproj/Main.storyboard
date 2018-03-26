@@ -70,7 +70,6 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="F9R-XN-mxw" kind="relationship" relationship="viewControllers" id="uMQ-L3-MKJ"/>
-                        <segue destination="VUV-4I-0nw" kind="relationship" relationship="viewControllers" id="rZo-EC-Jch"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -92,6 +91,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="763"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70373019366197187" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="93L-QJ-QZi" appends="YES" id="lLF-31-rq2"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fg8-Ig-qj9">
                                 <rect key="frame" x="161" y="482" width="56" height="69"/>
@@ -101,6 +103,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fg8-Ig-qj9" secondAttribute="trailing" constant="158" id="1No-qD-1RK"/>
                             <constraint firstItem="UvZ-Mk-rP3" firstAttribute="leading" secondItem="a7M-QT-vCU" secondAttribute="leading" id="4Hq-CC-Y5g"/>
@@ -120,6 +123,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfn-mM-bbk" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="93L-QJ-QZi">
+                    <connections>
+                        <action selector="didTapOverlay:" destination="F9R-XN-mxw" id="iUj-ry-ZTf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1465" y="0.0"/>
         </scene>
@@ -128,14 +136,14 @@
             <objects>
                 <viewController id="VUV-4I-0nw" customClass="ExpandingTableViewController" customModule="PitchMenuExperiments" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P52-xu-2Zo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simulator Screen Shot - iPhone X - 2018-03-23 at 10.22.32" translatesAutoresizingMaskIntoConstraints="NO" id="fc4-qC-JBF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giK-l0-DLB">
-                                <rect key="frame" x="161" y="482" width="56" height="69"/>
+                                <rect key="frame" x="161" y="482" width="56" height="30"/>
                                 <state key="normal" title="Pitch"/>
                             </button>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Md7-bw-nIr" userLabel="DarkOverlay">
